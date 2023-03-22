@@ -1,4 +1,4 @@
-# -----------------------------import of modules-----------------------------
+# -----------------------------Import of modules-----------------------------
 from tkinter import ttk  # tkk: set of widgets:buttons, labels...
 import tkinter as tk  # tkinter: package for standard python interface
 
@@ -24,5 +24,6 @@ def app_buttons(root):
     root.mainloop()  # continue until the closing of the window
 
 
-root = tk.Tk()
-app_buttons(root)
+# ---------------------------------Main program-------------------------------
+root = tk.Tk()  # creation of an object(root here)
+app_buttons(root)  # packing_components_app

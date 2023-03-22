@@ -1,5 +1,8 @@
-# import tkinter as tk  # tkinter: package for standard python interface
+# -----------------------------import of modules------------------------------
 from tkinter import ttk  # tkk: set of widgets:buttons, labels...
+import tkinter as tk  # tkinter: package for standard python interface
+
+# -----------------------------Hello world program----------------------------
 
 
 def hello_world_app(root):
@@ -10,3 +13,8 @@ def hello_world_app(root):
     # pack: enable to place the components into the window
     root.mainloop()  # mainloop: display the window
     # and continue until the closing of the window
+
+
+# ---------------------------------Main program-------------------------------
+root = tk.Tk()  # creation of an object(root here)
+hello_world_app(root)  # hello_world_app

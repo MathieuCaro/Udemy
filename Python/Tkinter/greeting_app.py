@@ -1,4 +1,4 @@
-# -----------------------------import of modules------------------------------
+# -----------------------------Import of modules------------------------------
 import tkinter as tk  # tkinter: package for standard python interface
 from tkinter import ttk  # tkk: set of widgets:buttons, labels...
 
@@ -22,6 +22,7 @@ def greeting_app(root):
     # width in nb of characters
     name_entry.pack(side="left")
     name_entry.focus()
+    # focus enable to enter text from the keyboard
     greet_button = ttk.Button(root, text="Greet", command=lambda: greet(user_name))
     # button that calls the function greet() when pressed
     greet_button.pack(side="left")
@@ -30,8 +31,7 @@ def greeting_app(root):
     # enable to close windows
     quit_button.pack(side="right")
 
-    root.mainloop()  # continue until the closing of the window
 
-
-root = tk.Tk()
-greeting_app(root)
+# ---------------------------------Main program-------------------------------
+root = tk.Tk()  # creation of an object(root here)
+greeting_app(root)  # greeting_app
