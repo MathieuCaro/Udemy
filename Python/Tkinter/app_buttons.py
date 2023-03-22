@@ -1,21 +1,28 @@
-import tkinter as tk
-from tkinter import ttk
+# -----------------------------import of modules-----------------------------
+from tkinter import ttk  # tkk: set of widgets:buttons, labels...
+import tkinter as tk  # tkinter: package for standard python interface
+
+# ---------------------------------Functions----------------------------------
 
 
 def greet():
+    """Simply print a string in terminal"""
     print("Hello Buttons App user !")
 
 
+def app_buttons(root):
+    greet_button = ttk.Button(root, text="Greet", command=greet)
+    # button that calls the function greet() when pressed
+    greet_button.pack(side="left", fill="both", expand=True)
+    # side : side of the window where the button is
+    # fill : fill the free space of both side
+    quit_button = ttk.Button(root, text="Quit", command=root.destroy)
+    # enable to close windows
+    # when the button is pushed, the windows is closed
+    quit_button.pack(side="left", fill="y")
+
+    root.mainloop()  # continue until the closing of the window
+
+
 root = tk.Tk()
-
-greet_button = ttk.Button(
-    root, text="Greet", command=greet
-)  # button that calls the function greet() when pressed
-greet_button.pack(side="left", fill="both", expand=True)
-
-quit_button = ttk.Button(
-    root, text="Quit", command=root.destroy
-)  # enable to close windows
-quit_button.pack(side="left", fill="y")
-
-root.mainloop()  # continue until the closing of the window
+app_buttons(root)
