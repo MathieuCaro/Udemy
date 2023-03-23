@@ -1,7 +1,7 @@
 # ===========================================================================
 # Title: frames.py
-# Description: This will create two buttons:first one to send a message with
-# the name input by the user and the other one to quit and close the window
+# Description: This will enable to understand the placement of the labels with
+#   the frames, one to another
 # Author : Mathieu Caro
 # Source : Udemy
 # ===========================================================================
