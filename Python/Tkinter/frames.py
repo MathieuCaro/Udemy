@@ -1,11 +1,3 @@
-# ===========================================================================
-# Title: packing_components.py
-# Description: This will introduce the management of the components of the
-#   window:placement, size, etc...
-# Author : Mathieu Caro
-# Source : Udemy
-# ===========================================================================
-
 # -----------------------------import of modules------------------------------
 from tkinter import ttk  # tkk: set of widgets:buttons, labels...
 import tkinter as tk  # tkinter: package for standard python interface

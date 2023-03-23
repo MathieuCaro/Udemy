@@ -1,3 +1,12 @@
+# ===========================================================================
+# Title: greeting_app.py
+# Description: This will create two buttons:first one to send a message with
+# the name input by the user and the other one to quit and close the window
+# Author : Mathieu Caro
+# Source : Udemy
+# ===========================================================================
+
+
 # -----------------------------Import of modules------------------------------
 import tkinter as tk  # tkinter: package for standard python interface
 from tkinter import ttk  # tkk: set of widgets:buttons, labels...
@@ -30,6 +39,7 @@ def greeting_app(root):
     quit_button = ttk.Button(root, text="Quit", command=root.destroy)
     # enable to close windows
     quit_button.pack(side="right")
+    root.mainloop()
 
 
 # ---------------------------------Main program-------------------------------

@@ -29,7 +29,6 @@ def app_buttons(root):
     # enable to close windows
     # when the button is pushed, the windows is closed
     quit_button.pack(side="left", fill="y")
-
     root.mainloop()  # continue until the closing of the window
 
 

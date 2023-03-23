@@ -1,3 +1,10 @@
+# ===========================================================================
+# Title: hello_world.py
+# Description: This will display on the window "Hello World"
+# Author : Mathieu Caro
+# Source : Udemy
+# ===========================================================================
+
 # -----------------------------import of modules------------------------------
 from tkinter import ttk  # tkk: set of widgets:buttons, labels...
 import tkinter as tk  # tkinter: package for standard python interface
