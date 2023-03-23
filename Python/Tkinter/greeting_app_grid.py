@@ -1,6 +1,6 @@
 # ===========================================================================
 # Title: greeting_app_frame.py
-# Description: This will reuse the fonction greeting_app but with frames
+# Description: This will reuse the fonction greeting_app but with grid
 # Author : Mathieu Caro
 # Source : Udemy
 # ===========================================================================
@@ -23,7 +23,7 @@ def greeting_app(root, frame1, frame2):
     # Entry field
     user_name = tk.StringVar()  # create a variable of string
     name_label = ttk.Label(frame1, text="Name ")  # Label : space for text
-    name_label.pack(side="left", padx=(0, 10))
+    name_label.grid(padx=(0, 10))
     # label "name" put on the left side with a horizontal padding
     # of 0 on the left side and 10 on the right side of text
     name_entry = ttk.Entry(frame1, width=15, textvariable=user_name)
@@ -47,7 +47,7 @@ root = tk.Tk()  # creation of an object(root here)
 # it takes all the top space
 input_frame = ttk.Frame(root, padding=(20, 10, 20, 0))
 # left:20 top:10 right:20 bottom:0
-input_frame.pack(fill="both")
+input_frame.grid()
 button_frame = ttk.Frame(root, padding=(20, 10))
 # left : 20 right :10
 button_frame.pack(fill="both")
