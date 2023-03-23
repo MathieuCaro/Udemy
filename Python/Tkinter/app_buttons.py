@@ -1,3 +1,12 @@
+# ===========================================================================
+# Title: app_buttons.py
+# Description: This will create two buttons:first one to send a message, the
+#   other one to quit and close the window
+# Author : Mathieu Caro
+# Source : Udemy
+# ===========================================================================
+
+
 # -----------------------------Import of modules-----------------------------
 from tkinter import ttk  # tkk: set of widgets:buttons, labels...
 import tkinter as tk  # tkinter: package for standard python interface
