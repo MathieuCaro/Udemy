@@ -1,26 +1,38 @@
+# ===========================================================================
+# Title: frames.py
+# Description: This will create two buttons:first one to send a message with
+# the name input by the user and the other one to quit and close the window
+# Author : Mathieu Caro
+# Source : Udemy
+# ===========================================================================
+
 # -----------------------------import of modules------------------------------
 from tkinter import ttk  # tkk: set of widgets:buttons, labels...
 import tkinter as tk  # tkinter: package for standard python interface
 
 # ------------------------Packing components function--------------------------
-def packing_components(root):
-    """App to browse the fonctionnality of geometry"""
-    root.geometry("600x400")
-    # geometry : define the initial dimensions of the windows
-    rectangle_1 = tk.Label(root, text="Rectangle 1", bg="green", fg="white")
-    # Label : space reserved to widget of type text
-    # bg:background fg:foreground
-    rectangle_1.pack(side="left", ipadx=10, ipady=10, fill="both", expand=True)
-    # ipadx/ipady : internal padding x and y of the obect (here rectangle_1)
-    # expand : the object takes up all space (if true)
-    rectangle_2 = tk.Label(root, text="Rectangle 2", bg="red", fg="white")
-    rectangle_2.pack(ipadx=10, ipady=10, fill="both", expand=True)
-    rectangle_3 = tk.Label(root, text="Rectangle 3", bg="orange", fg="white")
-    rectangle_3.pack(side="left", ipadx=10, ipady=10, fill="both")
-    root.mainloop()
-    # mainloop: display the window and continue until the closing of the window
+def frame_options(root, main):
+    tk.Label(main, text="Label top", bg="red").pack(
+        side="top", expand=True, fill="both"
+    )
+    tk.Label(main, text="Label top", bg="red").pack(
+        side="top", expand=True, fill="both"
+    )
+    # The both first labels share the left side by default
+    tk.Label(root, text="Label left", bg="green").pack(
+        side="left", expand=True, fill="both"
+    )
+    # This label occupies the leftmost free space(right side), the left side is
+    # already occupied by the two first labels
 
 
 # ---------------------------------Main program-------------------------------
+
 root = tk.Tk()  # creation of an object(root here)
-packing_components(root)  # packing_components_app
+main = ttk.Frame()  # creation of the frame (main here)
+main.pack(side="left", fill="both", expand=True)
+# This frame will contain the both first labels(red) and be positionned on the
+# left side of the window, take all the vertical left space
+
+frame_options(root, main)
+root.mainloop()
