@@ -1,5 +1,5 @@
 # ===========================================================================
-# Title: OO_window.py
+# Title: classe_intro.py
 # Description: This will create two buttons:first one to send a message, the
 #   other one to quit and close the window
 # Author : Mathieu Caro
@@ -8,18 +8,26 @@
 
 
 # -----------------------------Import of modules-----------------------------
-from tkinter import ttk  # tkk: set of widgets:buttons, labels...
-import tkinter as tk  # tkinter: package for standard python interface
+
 
 # ---------------------------------Functions----------------------------------
-class HelloWorld(tk.Tk):
-    def __init__(self):
-        super().__init__() #call the constructor of tk.Tk(super())
-        self.title("Hello World")
-        ttk.Label(self,text="Hello World").pack()
+class Student:
+    def __init__(self,name,grades):
+        self.name=name
+        self.grades=grades
         
+    def average_grade(self):
+        return sum(self.grades)/len(self.grades)
 
 # ---------------------------------Main program-------------------------------
-root = HelloWorld()  # creation of an object(root here)
-root.title()
-root.mainloop()
+student_1 = Student("Mathieu",(12,20,15,17,13)) #creation de l'instance
+student_2 = Student("Guillaume",(13,19,8,12,17)) #creation de l'instance
+
+print(student_1.name)
+print(student_1.average_grade())
+
+print(student_2.name)
+print(student_2.average_grade())
+
+
+    
