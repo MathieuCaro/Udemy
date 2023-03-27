@@ -1,7 +1,6 @@
 # ===========================================================================
 # Title: classe_intro.py
-# Description: This will create two buttons:first one to send a message, the
-#   other one to quit and close the window
+# Description: This script enables to review the basics og Class methods
 # Author : Mathieu Caro
 # Source : Udemy
 # ===========================================================================
