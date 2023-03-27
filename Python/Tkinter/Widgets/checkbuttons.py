@@ -13,7 +13,8 @@ from tkinter import ttk  # tkk: set of widgets:buttons, labels...
 
 # ---------------------------------Functions----------------------------------
 
-
+def print_current_option():
+    print(selected_option.get())
 
 
 
@@ -23,19 +24,22 @@ root.geometry("600x400")
 root.resizable(False,False)
 root.title("Scrollbar Widget example")
 
-root.grid_columnconfigure(0,weight=1)
-root.grid_rowconfigure(0,weight=1)
+selected_option = tk.StringVar() 
+#create a string variable (On or Off)
 
-text=tk.Text(root,height=8) #height: number of rows
-text.grid(row=0,column=0,sticky="EW")
-text.insert("1.0", "Please enter a comment")
+#creation of the checkbutton
+check_button = ttk.Checkbutton(
+    root, 
+    text="Check Example",
+    variable=selected_option,
+    command=print_current_option,
+    onvalue="On",
+    offvalue="Off"
+    ).pack()
+#variable: correspond to the string variable(selected_option)
+#command : function run when the button is checked or unchecked
+#onvalue/offvalue : determined what value the variable take
 
-#scrollbar
-text_scroll=ttk.Scrollbar(root,orient="vertical",command=text.yview)
-#orient : tell that if the scrollbar is vertical or horizonal
-#command : what happened when the scrollbar is moved
-text_scroll.grid(row=0,column=1,sticky="ns")
-text["yscrollcommand"]=text_scroll.set
-#enable to link the text and the scrollbar
 
-root.mainloop()
+
+root.mainloop() 
