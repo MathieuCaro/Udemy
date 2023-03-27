@@ -1,7 +1,7 @@
 # ===========================================================================
-# Title: checkbuttons.py
+# Title: radiobuttons.py
 # Description: This program allows you to discover a non-exhaustive list 
-#   of checkbuttons
+#   of radiobuttons
 # Author : Mathieu Caro
 # Source : Udemy
 # ===========================================================================
@@ -14,28 +14,46 @@ from tkinter import ttk  # tkk: set of widgets:buttons, labels...
 # ---------------------------------Functions----------------------------------
 
 def print_current_option():
-    print(selected_option.get())
-
-
+    print(f"The best language to use Tkinter is {storage_variable.get()}")
 
 # ---------------------------------Main program-------------------------------
 root = tk.Tk()  # creation of an object(root here)
 root.geometry("600x400")
 root.resizable(False,False)
-root.title("Checkbutton Widget example")
+root.title("RadioButton Widget example")
 
-selected_option = tk.StringVar() 
-#create a string variable (On or Off)
+storage_variable = tk.StringVar() 
+#create a string variable
 
-#creation of the checkbutton
-check_button = ttk.Checkbutton(
-    root, 
-    text="Check Example",
-    variable=selected_option,
-    command=print_current_option,
-    onvalue="On",
-    offvalue="Off"
-    ).pack()
+Text_label=ttk.Label(root,text="What is the language to use for Tkinter ?")
+Text_label.pack()
+option_1 = ttk.Radiobutton(
+    root,
+    text="C",
+    variable=storage_variable,
+    value="C",
+    padding=(200,0,0,0),
+    command=print_current_option
+    ).pack(anchor=tk.W)
+
+option_2 = ttk.Radiobutton(
+    root,
+    text="C++",
+    variable=storage_variable,
+    value="C++",
+    padding=(200,0,0,0),
+    command=print_current_option
+    ).pack(anchor=tk.W)
+
+option_3 = ttk.Radiobutton(
+    root,
+    text="Python",
+    variable=storage_variable,
+    value="Python",
+    padding=(200,0,0,0),
+    command=print_current_option
+    ).pack(anchor=tk.W)
+
 #variable: correspond to the string variable(selected_option)
 #command : function run when the button is checked or unchecked
 #onvalue/offvalue : determined what value the variable take

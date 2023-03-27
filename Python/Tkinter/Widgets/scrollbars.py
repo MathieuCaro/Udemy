@@ -13,10 +13,6 @@ from tkinter import ttk  # tkk: set of widgets:buttons, labels...
 
 # ---------------------------------Functions----------------------------------
 
-
-
-
-
 # ---------------------------------Main program-------------------------------
 root = tk.Tk()  # creation of an object(root here)
 root.geometry("600x400")
