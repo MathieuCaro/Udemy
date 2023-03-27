@@ -1,7 +1,7 @@
 # ===========================================================================
 # Title: scrollbars.py
 # Description: This program allows you to discover a non-exhaustive list 
-#   of scrollbars
+#   of checkbuttons
 # Author : Mathieu Caro
 # Source : Udemy
 # ===========================================================================
