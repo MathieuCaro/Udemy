@@ -1,3 +1,15 @@
+# ===========================================================================
+# Title: classe_method_example.py
+# Description: This script enables to review the basics og Class methods
+# Author : Mathieu Caro
+# Source : Udemy
+# ===========================================================================
+
+
+# -----------------------------Import of modules-----------------------------
+
+
+# ---------------------------------Functions----------------------------------
 class Book:
     TYPES=("hardcover","paperback ")
     
@@ -22,10 +34,10 @@ class Book:
     def paperback(cls, name, page_weight):
         return cls(name, cls.TYPES[1], page_weight) #use cls instead of Book is better
 
+# ---------------------------------Main program-------------------------------
 #book = Book("Harry Potter","hardcover",1500)
 
 book=Book.hardcover("Harry Potter", 1500)
 light = Book.paperback("Python basics", 600)
 print(book) #The Book Harry Potter is a hardcover, weighting 1600g.
 print(light) #The Book Python basics is a paperback ,weighting 600g.
-
