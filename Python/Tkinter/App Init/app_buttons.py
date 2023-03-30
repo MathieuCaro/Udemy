@@ -15,7 +15,7 @@ import tkinter as tk  # tkinter: package for standard python interface
 
 
 def greet():
-    """Simply print a string in terminal"""
+    # Simply print a string in terminal
     print("Hello Buttons App user !")
 
 

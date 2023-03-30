@@ -11,6 +11,8 @@ from tkinter import ttk  # tkk: set of widgets:buttons, labels...
 import tkinter as tk  # tkinter: package for standard python interface
 
 # ------------------------Packing components function--------------------------
+
+
 def frame_options(root, main):
     tk.Label(main, text="Label top", bg="red").pack(
         side="top", expand=True, fill="both"

@@ -33,7 +33,9 @@ def greeting_app(root, frame1, frame2):
     name_entry.focus()
     # focus enable to enter text from the keyboard
     # Two buttons: greet and quit button
-    greet_button = ttk.Button(frame2, text="Greet", command=lambda: greet(user_name))
+    greet_button = ttk.Button(
+        frame2, text="Greet", command=lambda: greet(user_name)
+    )  # noqa: E501
     # button that calls the function greet() when pressed
     greet_button.grid(row=0, column=0, sticky="EW")
     # pack: enable to place the components into the window

@@ -32,7 +32,9 @@ def greeting_app(root):
     name_entry.pack(side="left")
     name_entry.focus()
     # focus enable to enter text from the keyboard
-    greet_button = ttk.Button(root, text="Greet", command=lambda: greet(user_name))
+    greet_button = ttk.Button(
+        root, text="Greet", command=lambda: greet(user_name)
+    )  # noqa: E501
     # button that calls the function greet() when pressed
     greet_button.pack(side="left")
     # pack: enable to place the components into the window
