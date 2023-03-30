@@ -16,6 +16,17 @@ WHITE = "#FFFFFF"
 BLUE = "#0090FC"
 FONT_FAMILY = "Segoe UI"
 FONT_STYLE_BUTTON = ("arial", 30, "bold")
+TITLE = "Simple Calculator"
+HEIGHT_WINDOW = 700
+WIDTH_WINDOW = 550
+COOR_X_FIRST = 100
+COOR_Y_FIRST = 100
+HORIZONTAL = "EW"  # East and West
+VERTICAL = "NS"  # NorthSouth
+ALL_SIDES = "NSEW"  # North South East West
+ERROR = "ERROR"
+
+
 # -----------------------------Global Variables--------------------------------
 EQUATION = ""
 # ---------------------------------Functions----------------------------------
@@ -28,28 +39,34 @@ def show(value):
     # we add each button value to the string equation
     label_result.set(EQUATION)
     # for each additional button value it updates the value of the equation
+    return label_result
 
 
 def clear():
-    """This function simply clear the equation after using the "C" button"""
-    global equation
-    equation = ""
-    label_result.set(equation)
+    # This function simply clear the equation after using the "C" button"""
+    global EQUATION
+    EQUATION = ""
+    label_result.set(EQUATION)
     return 0
 
 
+def string_to_calculate(EQUATION):
+    nb_result = eval(EQUATION)
+    return nb_result
+
+
 def calculate():
-    """This function calculate from the string "equation" """
-    global equation
+    # This function calculate from the string "equation"
+    global EQUATION
     result = ""
-    if equation != "":
+    if EQUATION != "":
         try:
-            result = eval(equation)
+            result = string_to_calculate(EQUATION)
             # here eval enables from a string to transform into a calcul
             # in that way, eval send back the result of the operation
         except ValueError:
             result = "error"
-            equation = ""
+            EQUATION = ""
             #  the operation is not calculable, there is an error
         label_result.set(result)
     return
@@ -73,7 +90,7 @@ def buttons_parameters(
         command=lambda: show(char),
         bd=1,
         pady=1,
-        font=("arial", 30, "bold"),
+        font=FONT_STYLE_BUTTON,
         height=height_,
         width=width_,
         text=text_,
@@ -85,26 +102,28 @@ def buttons_parameters(
 # ---------------------------------Main program-------------------------------
 root = tk.Tk()
 # creation of an object(root here)
-root.title("Simple Calculator")
-root.geometry("550x700+100+200")
+root.title(TITLE)
+root.geometry(f"{WIDTH_WINDOW}x{HEIGHT_WINDOW}+{COOR_X_FIRST}+{COOR_Y_FIRST}")
+print(root.winfo_exists())
+print(type(root.winfo_geometry()))
 # Size of the window(570*600)
 # initial point (100px from de left and 200 from the top)
 root.resizable(False, False)
 # The size of the window can't be modified(by x or y)(False)
-root.configure(bg="white")
+root.configure(bg=WHITE)
 root.columnconfigure(0, weight=1)
 
 # Result of the calculator
 result_frame = ttk.Frame(root, padding=(20, 10, 20, 0))
-result_frame.grid(row=0, column=0, sticky="EW")
+result_frame.grid(row=0, column=0, sticky=HORIZONTAL)
 result_frame.rowconfigure(0, weight=1)
 label_result = tk.StringVar()
 label = ttk.Label(result_frame, textvariable=label_result, anchor="e")
 label.config(font=(FONT_FAMILY, 70))
-label.grid(row=0, column=0, sticky="EW")
+label.grid(row=0, column=0, sticky=HORIZONTAL)
 
 button_frame = ttk.Frame(root, padding=(20, 10))
-button_frame.grid(row=1, column=0, sticky="NSEW")
+button_frame.grid(row=1, column=0, sticky=ALL_SIDES)
 
 button_frame.columnconfigure(0, weight=1)
 button_frame.columnconfigure(1, weight=1)
@@ -148,7 +167,7 @@ button_6 = buttons_parameters("6", 3, 2, WHITE, BLACK, "6", 3, 2)
 button_plus = buttons_parameters("+", 3, 2, WHITE, BLACK, "+", 3, 3)
 
 # Forth line of digits
-button_1 = buttons_parameters("1", 3, 2, BLACK, BLACK, "1", 4, 0)
+button_1 = buttons_parameters("1", 3, 2, WHITE, BLACK, "1", 4, 0)
 button_2 = buttons_parameters("2", 3, 2, WHITE, BLACK, "2", 4, 1)
 button_3 = buttons_parameters("3", 3, 2, WHITE, BLACK, "3", 4, 2)
 button_equal = tk.Button(
@@ -163,34 +182,33 @@ button_equal = tk.Button(
     pady=1,
     command=lambda: calculate(),
 )
-button_equal.grid(row=4, column=3, rowspan=2, sticky="NS")
+button_equal.grid(row=4, column=3, rowspan=2, sticky=VERTICAL)
 
 # Fifth line of digits
 button_0 = tk.Button(
     button_frame,
     text="0",
-    width=7,
+    width=8,
     height=2,
-    font=("arial", 30, "bold"),
+    font=FONT_STYLE_BUTTON,
     bd=1,
     fg=WHITE,
     bg=BLACK,
     command=lambda: show("0"),
 )
-button_0.grid(row=5, column=0, columnspan=2, sticky="NS")
+button_0.grid(row=5, column=0, columnspan=2, sticky=VERTICAL)
 button_pt = tk.Button(
     button_frame,
     text=".",
     width=3,
     height=2,
-    font=("arial", 30, "bold"),
+    font=FONT_STYLE_BUTTON,
     bd=1,
     fg=WHITE,
     bg=BLACK,
     command=lambda: show("."),
 )
-# buttons_parameters(".", 3, 2, WHITE, BLACK, ".", 5, 2)
-button_pt.grid(row=5, column=2, sticky="NS")
+button_pt.grid(row=5, column=2, sticky=VERTICAL)
 
 
 root.mainloop()
