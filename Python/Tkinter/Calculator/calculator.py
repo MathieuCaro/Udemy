@@ -25,38 +25,43 @@ HORIZONTAL = "EW"  # East and West
 VERTICAL = "NS"  # NorthSouth
 ALL_SIDES = "NSEW"  # North South East West
 ERROR = "ERROR"
+WEIGHT_1 = 1
 
 
 # -----------------------------Global Variables--------------------------------
 EQUATION = ""
 # ---------------------------------Functions----------------------------------
 
+# This function enables to set the value of each button on screen
+
 
 def show(value):
-    # This function enables to set the value of each button on screen
     global EQUATION
     EQUATION += value
     # we add each button value to the string equation
     label_result.set(EQUATION)
-    # for each additional button value it updates the value of the equation
+    # for each additional button pushed on calculator
+    # it updates the value of the equation
     return label_result
 
 
+# This function simply clear the equation after using the "C" button
 def clear():
-    # This function simply clear the equation after using the "C" button"""
+
     global EQUATION
     EQUATION = ""
     label_result.set(EQUATION)
     return 0
 
 
+# Intermediate function to transform a string into a result of the calculus
 def string_to_calculate(EQUATION):
     nb_result = eval(EQUATION)
     return nb_result
 
 
+# This function calculate from the string "equation"
 def calculate():
-    # This function calculate from the string "equation"
     global EQUATION
     result = ""
     if EQUATION != "":
@@ -97,6 +102,14 @@ def buttons_parameters(
     )
     button.grid(row=row_, column=column_)
     return
+    # text_ = text on the button
+    # width_ = width of the button
+    # height_ = height of the button
+    # foreground_color= fcg of the button
+    # backgroundcolor_ = bgc of the color
+    # char_ = value of the button(char),
+    # row_ = row on the app
+    # column_ = column on the app
 
 
 # ---------------------------------Main program-------------------------------
@@ -119,20 +132,23 @@ result_frame.grid(row=0, column=0, sticky=HORIZONTAL)
 result_frame.rowconfigure(0, weight=1)
 label_result = tk.StringVar()
 label = ttk.Label(result_frame, textvariable=label_result, anchor="e")
+# anchor = position, here "EAST"
 label.config(font=(FONT_FAMILY, 70))
 label.grid(row=0, column=0, sticky=HORIZONTAL)
 
 button_frame = ttk.Frame(root, padding=(20, 10))
 button_frame.grid(row=1, column=0, sticky=ALL_SIDES)
 
-button_frame.columnconfigure(0, weight=1)
-button_frame.columnconfigure(1, weight=1)
-button_frame.columnconfigure(2, weight=1)
-button_frame.columnconfigure(3, weight=1)
-button_frame.rowconfigure(0, weight=1, minsize=20)
-button_frame.rowconfigure(1, weight=1, minsize=20)
-button_frame.rowconfigure(2, weight=1, minsize=20)
-button_frame.rowconfigure(3, weight=1, minsize=20)
+# it enables to have 4 equal portions on screen horizontally
+button_frame.columnconfigure(0, WEIGHT_1)
+button_frame.columnconfigure(1, WEIGHT_1)
+button_frame.columnconfigure(2, WEIGHT_1)
+button_frame.columnconfigure(3, WEIGHT_1)
+# it enables to have 4 equal portions on screen horizontally
+button_frame.rowconfigure(0, WEIGHT_1, minsize=20)
+button_frame.rowconfigure(1, WEIGHT_1, minsize=20)
+button_frame.rowconfigure(2, WEIGHT_1, minsize=20)
+button_frame.rowconfigure(3, WEIGHT_1, minsize=20)
 
 
 # First line of digits
