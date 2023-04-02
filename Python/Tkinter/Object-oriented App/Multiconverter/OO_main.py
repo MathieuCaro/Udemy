@@ -1,10 +1,20 @@
 # ===========================================================================
 # Title: OO_distance_converter.py
-# Description: This program is an app to convert the distance from meters to
+# Description: This app regroups 4 apps
 # feets by using classes
 # Author : Mathieu Caro
 # Source : Udemy
 # ===========================================================================
+
+# Le but de cette application était de manipuler les classes avec les applications
+# déja existantes(sans classe) :
+#     -> Hello_world.py
+#     -> metertofeet.py
+#     -> Calculator.py
+
+# Mais aussi d'en créer une nouvelle pour manipuler les classes et
+# les entrées de données
+
 
 # -----------------------------Import of modules------------------------------
 import tkinter as tk  # tkinter: package for standard python interface
