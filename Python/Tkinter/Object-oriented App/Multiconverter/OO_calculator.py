@@ -129,7 +129,7 @@ class Calculatrice(ttk.Frame):
             bd=1,
             fg=WHITE,
             bg=BLACK,
-            command=lambda: show("0"),
+            command=lambda: self.show("0"),
         )
         self.button_0.grid(row=5, column=0, columnspan=2, sticky=VERTICAL)
         self.button_pt = tk.Button(
@@ -141,7 +141,7 @@ class Calculatrice(ttk.Frame):
             bd=1,
             fg=WHITE,
             bg=BLACK,
-            command=lambda: show("."),
+            command=lambda: self.show("."),
         )
         self.button_pt.grid(row=5, column=2, sticky=VERTICAL)
 
