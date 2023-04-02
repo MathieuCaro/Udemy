@@ -116,8 +116,3 @@ class MeterConverter(ttk.Frame):
 
         self.inch_text.delete("1.0", END)
         self.inch_text.insert(END, round(inch, 3))
-
-
-root = tk.Tk()
-MeterConverter(root)
-root.mainloop()
