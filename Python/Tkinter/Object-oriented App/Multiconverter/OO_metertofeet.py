@@ -16,27 +16,6 @@ APP_TITLE = "Distance converter"
 METER_LABEL_FONT = ("Segoe UI", 15)
 # ---------------------------------Functions----------------------------------
 
-# Here this the main class(all the app)
-class DistanceConverter(tk.Tk):
-    def __init__(self, *args, **kwargs):
-        # self = root
-        # kwargs : positionnal arguments
-        # args : names arguments
-        super().__init__(*args, **kwargs)
-
-        self.title(APP_TITLE)
-
-        frame = MeterToFeet(self, padding=(60, 30))
-        frame.grid()
-
-        self.bind("<Return>", frame.calculate_feet)
-        # enable to calculate the number of feets
-        # since the user press Enter on the keyboard
-        self.bind("<KP_Enter>", frame.calculate_feet)
-        # enable to calculate the number of feets
-        # since the user press Enter on the keyboard of numeric keypad
-
-
 # This class represents the frame(container)
 class MeterToFeet(ttk.Frame):
     def __init__(self, container, **kwargs):
@@ -45,6 +24,12 @@ class MeterToFeet(ttk.Frame):
         # These both values are objects of the Frame
         self.meters_value = tk.StringVar()
         self.feets_value = tk.StringVar()
+        self.bind("<Return>", self.calculate_feet)
+        # enable to calculate the number of feets
+        # since the user press Enter on the keyboard
+        self.bind("<KP_Enter>", self.calculate_feet)
+        # enable to calculate the number of feets
+        # since the user press Enter on the keyboard of numeric keypad
 
         # Widgets
         meters_label = ttk.Label(self, text="Meters:")
@@ -83,6 +68,6 @@ class MeterToFeet(ttk.Frame):
 # ---------------------------------Main program-------------------------------
 
 
-root = DistanceConverter()
-root.title(APP_TITLE)
-root.mainloop()
+# root = DistanceConverter()
+# root.title(APP_TITLE)
+# root.mainloop()
