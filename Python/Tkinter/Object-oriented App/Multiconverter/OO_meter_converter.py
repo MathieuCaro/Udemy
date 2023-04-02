@@ -76,7 +76,8 @@ class MeterConverter(ttk.Frame):
         self.inch_label.grid(row=11, column=1)
 
     def lengthconv(self):
-
+        # ici on prend la valeur meter_value et le tronquer en float
+        # puis on le multiplie par son coefficient multiplicateur
         km = float(self.meter_value.get()) * 1000
         hm = float(self.meter_value.get()) * 100
         dm = float(self.meter_value.get()) * 10
@@ -87,7 +88,8 @@ class MeterConverter(ttk.Frame):
         foot = float(self.meter_value.get()) * 3.28084
         yard = float(self.meter_value.get()) * 1.094
         mile = float(self.meter_value.get()) * 0.00062
-
+        # delete prend ici la 1ere ligne(1) et la premieère colonne(0)
+        # jusqu'à la fin(END), ici END est une constante de la librairie tkinter
         self.km_text.delete("1.0", END)
         self.km_text.insert(END, round(km, 3))
 
