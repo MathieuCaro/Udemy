@@ -1,5 +1,5 @@
 # ===========================================================================
-# Title: classe_voiture.py
+# Title: classe_intro.py
 # Description: This script enables to review the basics og Class methods
 # Author : Mathieu Caro
 # Source : Udemy
@@ -10,20 +10,23 @@
 
 
 # ---------------------------------Functions----------------------------------
-#Création de la classe Voiture
-class Voiture:
-    nb_voiture=0
-    def __init__(self,marque):
-        Voiture.nb_voiture+=1
-        self.marque=marque
+class Student:
+    def __init__(self,name,grades):
+        self.name=name
+        self.grades=grades
+        
+    def average_grade(self):
+        return sum(self.grades)/len(self.grades)
 
 # ---------------------------------Main program-------------------------------
-#Instance 1:
-ma_voiture=Voiture("Audi") #création de l'instance 1
-print(ma_voiture.marque)
-print(Voiture.nb_voiture)
+student_1 = Student("Mathieu",(12,20,15,17,13)) #creation de l'instance
+student_2 = Student("Guillaume",(13,19,8,12,17)) #creation de l'instance
 
-#Instance 2:
-ta_voiture=Voiture("Peugeot") #création de l'instance 2
-print(ta_voiture.marque)
-print(Voiture.nb_voiture)
+print(student_1.name)
+print(student_1.average_grade())
+
+print(student_2.name)
+print(student_2.average_grade())
+
+
+    
